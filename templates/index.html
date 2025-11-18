@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Car Manual Generator</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; background-color: #f7f9fc; }
+        textarea, input, button { width: 100%; padding: 12px; margin-top: 10px; font-size: 16px; }
+        .container { max-width: 700px; margin: auto; background: white; padding: 30px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        pre { background: #f0f0f0; padding: 15px; border-radius: 5px; white-space: pre-wrap; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2>🚗 AI-Powered Car Manual Generator</h2>
+    <form method="post">
+        <label>Car Model:</label>
+        <input type="text" name="car_model" required>
+        <label>Usage Pattern:</label>
+        <textarea name="usage" rows="4" required placeholder="e.g., 50km/day city driving, rarely on highways, heavy AC usage..."></textarea>
+        <button type="submit">Generate Manual</button>
+    </form>
+
+    {% if manual %}
+        <h3>📘 Your Personalized Manual:</h3>
+        <pre>{{ manual }}</pre>
+    {% endif %}
+</div>
+</body>
+</html>
